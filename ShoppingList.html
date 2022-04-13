@@ -1,0 +1,189 @@
+<!Doctype Html>  
+<Html>     
+    <Head>      
+        <Title> Shopping List </Title> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type=text/css>   
+            *{
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+            }
+            body {  
+                height: 125vh;  
+                margin-top: 80px;  
+                padding: 30px;  
+                background-size: cover;  
+                font-family: sans-serif;  
+            }  
+            header {  
+                background-color: rgb(130, 176,77);  
+                position:-webkit-sticky;
+                position: sticky;      
+                top: 0px;
+                height: 30px;  
+                display: flex;  
+                align-items: center;  
+                box-shadow: 0 0 25px 0 black;  
+            }
+            header * {  
+                display: inline;  
+            }  
+            header li {  
+                padding: 16px;  
+            }  
+            header li a {  
+                color: #283618;  
+            }  
+            #Appborder {
+                border: solid navy;
+                width: 500px;
+                height: 700px;
+                
+            }
+            ul li{
+                list-style-type: none;
+            }
+            
+            .addItemBtn {
+                padding: 10px;
+                background: gray;
+                text-align: center;
+                font-size: x-large;
+            }
+            .close {
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 12px 16px 12px 16px;
+            }
+
+            #myInput{
+                margin: 0px 0px 0px 10px; 
+                width: 30%; 
+                font-size: x-large;
+            }
+
+            .close{
+                position:relative;
+            }
+
+            #food{
+                width: 50%;
+            }
+        </style>
+    </Head>  
+
+    <Body> 
+        Phone border
+        <div id="Appborder">  
+            
+
+            <div>
+                <a href="#"><img style="background-color:rgb(130, 176,77); " width="500" src="KK_logo_green_BG.png"> </a>
+            </div>
+
+            <header>
+                <nav>
+                    <ul>
+                        <li>  
+                            <a href="#"> Home Page</a>  
+                        </li>  
+                        <li>  
+                            <a href="Inventory.html"> Inventory </a>  
+                        </li>  
+                        <li>  
+                            <a href="ShoppingList.html"> Shoppinglist </a>  
+                        </li>  
+                        <li> 
+                            <a href="#"> Recipe </a>  
+                        </li>  
+                    </ul>  
+                </nav>  
+            </header>
+
+            <div>
+                <h1 style="margin: 10px"> What do I have to get? </h1>
+                <input type="text" id="myInput" placeholder="E.g. Apples">
+                <span onclick="addItem()" class="addItemBtn">Add Item</span>
+            </div>
+
+            <ul id="myUL" style="padding: 25px; font-size:x-large;">
+                <li id="food">
+                    Broccoli 
+                    <span class="close">x</span>
+                </li>
+                <li id="food">
+                    Steak
+                    <span class="close">x</span>
+                </li>
+                <li id="food">
+                    Carrots
+                    <span class="close">x</span>
+                </li>
+                <li id="food">
+                    Garlic
+                    <span class="close">x</span>
+                </li>
+                <li id="food">
+                    Celery
+                    <span class="close">x</span>
+                </li>
+            </ul>
+            
+            
+        </div>
+    
+    </Body>   
+
+    <script>
+        var myNodelist = document.getElementById("food");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("x");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        function addItem() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+           
+            
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("x");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+            
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+            
+        }
+        </script>
+</Html>  
