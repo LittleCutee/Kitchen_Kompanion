@@ -1,0 +1,190 @@
+<!Doctype Html>  
+<Html>     
+    <Head>      
+        <Title> Inventory </Title> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type=text/css>   
+            body {  
+                height: 125vh;  
+                margin-top: 80px;  
+                padding: 30px;  
+                background-size: cover;  
+                font-family: sans-serif;  
+            }  
+            header {  
+                background-color: #FEFAE0;  
+                position: fixed;  
+                left: 0;  
+                right: 0;  
+                top: 5px;  
+                height: 30px;  
+                display: flex;  
+                align-items: center;  
+                box-shadow: 0 0 25px 0 black;  
+            }  
+            header * {  
+                display: inline;  
+            }  
+            header li {  
+                margin: 60px;  
+            }  
+            header li a {  
+                color: #283618;  
+            }  
+            #Appborder {
+                border: solid navy;
+                width: 1284px;
+                height: 2778px;
+                
+            }
+            table, th, td {
+                border: 1px solid black;
+                
+            }
+        </style>
+    </Head>  
+
+    <Body> 
+        <div id="Appborder">
+            <header>
+                <nav>
+                    <ul>
+                        <li>  
+                            <a href="#"> Home Page</a>  
+                        </li>  
+                        <li>  
+                            <a href="Inventory.html"> Inventory </a>  
+                        </li>  
+                        <li>  
+                            <a href="ShoppingList.html" onclick="test()"> Shopping List </a>  
+                        </li>  
+                        <li> 
+                            <a href="#"> Recipe </a>  
+                        </li>  
+                    </ul>  
+                </nav>  
+            </header>  
+
+            <h1> What's in My Fridge? </h1>
+
+            <div id="outputDiv">
+            </div> 
+
+            <h2> Add Your New Inventory </h2>
+
+            <label> Add Item Name: </label>
+            <input type="text" id="itemname" name="itemname">
+            <br>
+            <label> Add Item Quantity: </label>
+            <input type="number" id="itemquantity" name="itemquantity">
+            <br>
+            <input type="reset" value="Finish" onclick="addNewItem()"> </button>
+
+        </div>
+    </Body>   
+
+    <script>
+        var tableData = [["Egg(dozen)", 2], ["Milk(bottle of 1 gallon)", 1], ["Chocolate Ice Cream",3]]
+        updateTable();
+        var shoppingList = [];
+        var transferList = "<table border=1px solid black>";
+
+        function addNewItem() {
+            var f1 = document.getElementById("itemname").value;
+            var f2 = document.getElementById("itemquantity").value;
+            tableData.push([f1, f2]);
+            updateTable();
+            formClear();
+        }
+        function formClear() {
+            document.getElementById("itemname").value = "";
+            document.getElementById("itemquantity").value = "";
+        }
+
+        function makeTableHTML(array) {
+            var result = "<table border=1px solid black>";
+            result +=
+            "<tr>" + 
+                "<th> Item </th>" + 
+                "<th> Quantity </th>" +
+                "<th> Update </th>" +
+                "<th> Add to Shopping List</th>" +
+            "</tr>"
+
+            for(var i=0; i<array.length; i++) {
+                result += "<tr id=" + i + ">";
+                for(var j=0; j<array[i].length; j++){
+                    result += "<td class='row-data'>"+array[i][j]+"</td>";
+                }
+                
+                result +=
+                    "<td>" +
+                            "<button onclick='incFunction()'> + </button>" +
+                            "<button onclick='decFunction()'> - </button>" +
+                    "</td>";
+                
+                result += 
+                "<td>" +
+                    "<button onclick='show()'> Add to list </button>" +
+                "</td>";
+
+                result += "</tr>";
+            }
+            result += "</table>";
+            return result;
+        }
+
+        function incFunction() {
+            var rowId = event.target.parentNode.parentNode.id;
+            var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
+            var item = data[1].innerHTML;
+            var temp = (parseInt(item)+1);
+            tableData[rowId][1] = temp;
+            updateTable();
+        }
+
+        function decFunction() {
+            var rowId = event.target.parentNode.parentNode.id;
+            var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
+            var item = data[1].innerHTML;
+            var temp = (parseInt(item)-1);
+            tableData[rowId][1] = temp;
+            updateTable();
+        }
+
+        function show() {
+            var rowId = event.target.parentNode.parentNode.id;
+            //this gives id of tr whose button was clicked
+            var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
+            /*returns array of all elements with 
+            "row-data" class within the row with given id*/
+
+            var item = data[0].innerHTML;
+            alert("Item: " + item + " just added to the shopping list.");
+            shoppingList.push(item);
+        }
+        
+        function updateTable() {
+            document.getElementById("outputDiv").innerHTML = makeTableHTML(tableData);
+        }
+
+        function test(){
+            test1();
+            test2();
+        }
+
+        function test1(){
+            for (var i=0; i<shoppingList.length; i++){
+                transferList += "<tr>"
+                transferList += ("<td>" + shoppingList[i] + "<br>" + "</td>");
+                transferList += "</tr>"
+            }
+        }
+        
+        function test2(){
+            localStorage.setItem("item", transferList);
+        }
+        
+        </script>
+</Html>  
