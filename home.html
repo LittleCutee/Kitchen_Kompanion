@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<style type=text/css>
+    #Appborder {
+        border: solid navy;
+        width: 500px;
+        height: 700px; 
+    }
+</style>
 <head>
     <title>Home Page</title>
 </head>
-<body class = "active" onload="main()">
-    <div class = "page-container">
-        <div class = "logo" align="center">
-            <img src = "logos/KK_logo_green_BG.PNG" alt = "KitchenKompanion">
+<div id="Appborder">
+    <body class = "active" onload="main()">
+        <div class = "page-container">
+           <div class = "logo" align="center">
+               <img src = "KK_logo_green_BG.PNG" width = "500"alt = "KitchenKompanion">
         </div>
         <div class = "profile-container" align = "center">
             <h2>
@@ -55,30 +63,31 @@
             </h5>
         </div>
 
-        <div class = "tab" align = "center">
-            <div class="action-container">
-                <button class = "tablinks">
-                    <a href = "newHome.html">
-                        Home
-                    </a>
-                </button>
-                <button class = "tablinks">
-                    <a href = "newRecipe.html">
-                        Recipes
-                    </a>
-                </button>
-                <button class = "tablinks">
-                    <a href = "inventory.html">
-                        Inventory
-                    </a>
-                </button>
-                <button class = "tablinks">
-                    <a href = "shoppinglist.html">
-                        Shop List
-                    </a>
-                </button>
+            <div class = "tab" align = "center">
+                <div class="action-container">
+                    <button class = "tablinks">
+                        <a href = "newHome.html">
+                            Home
+                        </a>
+                    </button>
+                    <button class = "tablinks">
+                        <a href = "newRecipe.html">
+                            Recipes
+                        </a>
+                    </button>
+                        <button class = "tablinks">
+                        <a href = "inventory.html">
+                            Inventory
+                        </a>
+                    </button>
+                    <button class = "tablinks">
+                        <a href = "shoppinglist.html">
+                            Shop List
+                        </a>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+</div>
 </html>
