@@ -3,70 +3,218 @@
 <head>
     <title>Recipe</title>
 </head>
-<style type=text/css>
-    #Appborder {
-        border: solid navy;
-        width: 500px;
-        height: 700px;
-    }
-</style>
 
-<div id="Appborder">
-    <div class="logo" align = "center">
-        <img src="KK_logo_green_BG.PNG" width="500" alt="KitchenKompanion">
-    </div>
+<div class="logo" align = "center">
+    <img src="KK_logo_green_BG.png" alt="KitchenKompanion">
+</div>
+
 <body>
     <div class = "start" align = "center">
         <h2>
             Your Recipes
         </h2>
         <h4>
-            Curry
-            <button><a href='http://www.google.com'>click for details</a></button>
-        </h4>
-        <h4>
             Fried Egg
-            <button><a href='http://www.google.com'>click for details</a></button>
         </h4>
+        <div id = "box" >
+            <p align = "left">Step 1: Sunny Side Up. For sunny-side-up eggs, start with a hot nonstick skillet on medium heat.</p>
+            <p align = "left">Step 2: Crack the Eggs. Crack the eggs into individual bowls.</p>
+            <p align = "left">Step 3: Add the Eggs to the Pan.</p>
+            <p align = "left">Step 4: Cover When the Edges Turn White.</p>
+            <p align = "left">Step 5: They're Ready.</p>
+            <p align = "left">Step 6: Over-Easy Eggs.</p>
+            <p align = "left">Step 7: And Serve.</p>
+        </div>
+        <script>
+            function show(){
+                var box = document.getElementById("box");
+                var text = box.innerHTML;
+                var newBox = document.createElement("div");
+                var btn = document.createElement("button");
+                newBox.innerHTML = "";
+                btn.innerHTML = "Expand";
+                btn.href= "###";
+                btn.onclick = function(){
+                    if (btn.innerHTML == "Expand"){
+                        btn.innerHTML = "Collapse";
+                        newBox.innerHTML = text;
+                    }else{
+                        btn.innerHTML = "Expand";
+                        newBox.innerHTML = "";
+                    }
+                }
+                box.innerHTML = "";
+                box.appendChild(newBox);
+                box.appendChild(btn);
+            }
+            show();
+        </script>
         <h4>
-            Salmon
-            <button><a href='http://www.google.com'>click for details</a></button>
+        Salmon
         </h4>
+        <div id = "box2">
+            <p align = "left">Step 1: Ingredients preparation: salmon, olive oil, lemon, spray cooking oil.</p>
+            <p align = "left">Step 2: Pre-heat oven to 450°F with your baking sheet in the oven.</p>
+            <p align = "left">Step 3: Brush (all sides of the) salmon with oil, and season with salt & pepper.</p>
+            <p align = "left">Step 4: Place in the pan skin side down and cook for 3 minutes.</p>
+            <p align = "left">Step 5: Carefully flip and cook for another 2-4 minutes, until fish is cooked through
+                to 125°F and flakes with a fork. </p>
+        </div>
+        <script>
+            function show(){
+                var box = document.getElementById("box2");
+                var text = box.innerHTML;
+                var newBox = document.createElement("div");
+                var btn = document.createElement("button");
+                newBox.innerHTML = "";
+                btn.innerHTML = "Expand";
+                btn.href= "###";
+                btn.onclick = function(){
+                    if (btn.innerHTML == "Expand"){
+                        btn.innerHTML = "Collapse";
+                        newBox.innerHTML = text;
+                    }else{
+                        btn.innerHTML = "Expand";
+                        newBox.innerHTML = "";
+                    }
+                }
+                box.innerHTML = "";
+                box.appendChild(newBox);
+                box.appendChild(btn);
+            }
+            show();
+        </script>
         <h4>
             Shrimp Sausage
-            <button><a href='http://www.google.com'>click for details</a></button>
         </h4>
+        <div id = "box3">
+            <p align = "left">Step 1: Ingredients preparation: 13 ounce bag shrimp or crab boil, 3 tablespoons Old Bay Seasoning,
+                2 pounds small new potatoes, 4 corn, husked and cut in 1-1/2- to 3-inch pieces, 3 lemons, halved,
+                Snipped fresh Italian (flat-leaf) parsley</p>
+            <p align = "left">Step 2: In a 12- to 16-quart pot bring 2 gallons water to boiling. Add shrimp or crab boil and
+                Old Bay Seasoning.</p>
+            <p align = "left">Step 3: Transfer to large platter. Add lemon halves and sprinkle parsley.</p>
+            <p align = "left">Step 4: Serve hot or within 1 hour of cooking. </p>
+            <p align = "left">Step 5: Pass Garlic Mayonnaise and Cocktail Sauce. Makes 6 to 8 servings.</p>
+        </div>
+        <script>
+            function show(){
+                var box = document.getElementById("box3");
+                var text = box.innerHTML;
+                var newBox = document.createElement("div");
+                var btn = document.createElement("button");
+                newBox.innerHTML = "";
+                btn.innerHTML = "Expand";
+                btn.href= "###";
+                btn.onclick = function(){
+                    if (btn.innerHTML == "Expand"){
+                        btn.innerHTML = "Collapse";
+                        newBox.innerHTML = text;
+                    }else{
+                        btn.innerHTML = "Expand";
+                        newBox.innerHTML = "";
+                    }
+                }
+                box.innerHTML = "";
+                box.appendChild(newBox);
+                box.appendChild(btn);
+            }
+            show();
+        </script>
         <h4>
             Teriyaki Chicken
-            <button><a href='http://www.google.com'>click for details</a></button>
         </h4>
+        <div id = "box4">
+            <p align = "left">Step 1: Ingredients preparation: chicken, salt and pepper, olive oil, soy sauce, brown sugar, garlic grove</p>
+            <p align = "left">Step 2: Cook Chicken: Cut the chicken into one inch pieces and salt and pepper. Heat olive oil in a wok or
+                skillet over medium high heat and add the chicken. Cook until no longer pink and remove and set aside on a plate.</p>
+            <p align = "left">Step 3: Whisk: In a small bowl combine the soy sauce, brown sugar, apple cider vinegar, garlic, sesame oil,
+                and ginger. Then, in a separate small bowl whisk the water and cornstarch to make a slurry. Add the cornstarch to the
+                sauce mixture and whisk.</p>
+            <p align = "left">Step 4: Thicken Sauce: Add the sauce to the skillet and bring to a boil. Reduce heat and then whisk until it
+                starts to thicken.</p>
+            <p align = "left">Step 5: Toss Chicken with Sauce: Add the chicken back to the skillet and toss until coated and heated through.
+                Garnish with chopped green onions and sesame seeds. Serve over rice if desired.</p>
+        </div>
+        <script>
+            function show(){
+                var box = document.getElementById("box4");
+                var text = box.innerHTML;
+                var newBox = document.createElement("div");
+                var btn = document.createElement("button");
+                newBox.innerHTML = "";
+                btn.innerHTML = "Expand";
+                btn.href= "###";
+                btn.onclick = function(){
+                    if (btn.innerHTML == "Expand"){
+                        btn.innerHTML = "Collapse";
+                        newBox.innerHTML = text;
+                    }else{
+                        btn.innerHTML = "Expand";
+                        newBox.innerHTML = "";
+                    }
+                }
+                box.innerHTML = "";
+                box.appendChild(newBox);
+                box.appendChild(btn);
+            }
+            show();
+        </script>
         <h4>
             Tomato Soup
-            <button><a href='http://www.google.com'>click for details</a></button>
         </h4>
-        <h4>
-            Hamburger
-            <button><a href='http://www.google.com'>click for details</a></button>
-        </h4>
+        <div id = "box5">
+            <p align = "left">Step 1: Ingredients preparation: tomato, butter, onion. </p>
+            <p align = "left">Step 2: Combine butter, onion, and tomatoes.</p>
+            <p align = "left">Step 3: Grab a Dutch oven or pot, place it over medium heat and melt the butter.</p>
+            <p align = "left">Step 4: Add half an onion that has been cut into large wedges and a large can of tomatoes.</p>
+            <p align = "left">Step 5: Add water or broth and simmer.</p>
+            <p align = "left">Step 6: Bring everything to a low simmer, add some salt and leave it alone for about 40 minutes.</p>
+            <p align = "left">Step 7: Blend</p>
+        </div>
+        <script>
+            function show(){
+                var box = document.getElementById("box5");
+                var text = box.innerHTML;
+                var newBox = document.createElement("div");
+                var btn = document.createElement("button");
+                newBox.innerHTML = "";
+                btn.innerHTML = "Expand";
+                btn.href= "###";
+                btn.onclick = function(){
+                    if (btn.innerHTML == "Expand"){
+                        btn.innerHTML = "Collapse";
+                        newBox.innerHTML = text;
+                    }else{
+                        btn.innerHTML = "Expand";
+                        newBox.innerHTML = "";
+                    }
+                }
+                box.innerHTML = "";
+                box.appendChild(newBox);
+                box.appendChild(btn);
+            }
+            show();
+        </script>
         <div class = "tab" align = "center">
             <div class="action-container">
                 <button class = "tablinks">
-                    <a href = "newHome.html">
+                    <a href = "home.html">
                         Home
                     </a>
                 </button>
                 <button class = "tablinks">
-                    <a href = "newRecipe.html">
+                    <a href = "recipe.html">
                         Recipes
                     </a>
                 </button>
                 <button class = "tablinks">
-                    <a href = "inventory.html">
+                    <a href = "Inventory_Joey.html">
                         Inventory
                     </a>
                 </button>
                 <button class = "tablinks">
-                    <a href = "shoppinglist.html">
+                    <a href = "ShoppingList.html">
                         Shop List
                     </a>
                 </button>
@@ -74,6 +222,4 @@
         </div>
     </div>
 </body>
-
-</div>
 </html>
