@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style type=text/css>
+        #Appborder {
+            border: solid navy;
+            width: 500px;
+            height: 700px;
+        }
+        header {  
+            background-color: rgb(130, 176,77);  
+            position:-webkit-sticky;
+            position: sticky;      
+            top: 0px;
+            height: 30px;  
+            display: flex;  
+            align-items: center;   
+        }
+        ul li{
+            list-style-type: none;
+            margin: 5px;
+            padding: 5px 10px 5px 10px;
+        }
+
+        li:hover {
+            background-color: rgb(85, 104, 63);
+        }
+        header * {  
+            display: inline;  
+        }  
+    </style>
 <head>
     <title>Recipe</title>
 </head>
+<div id="Appborder">
+    <div class="logo" align = "center">
+        <img src="KK_logo_green_BG.png" width="500" alt="KitchenKompanion">
+    </div>
 
-<div class="logo" align = "center">
-    <img src="KK_logo_green_BG.png" alt="KitchenKompanion">
-</div>
-
-<body>
+    <body>
     <div class = "start" align = "center">
         <h2>
             Your Recipes
@@ -196,6 +224,8 @@
             }
             show();
         </script>
+
+        <!--
         <div class = "tab" align = "center">
             <div class="action-container">
                 <button class = "tablinks">
@@ -220,6 +250,29 @@
                 </button>
             </div>
         </div>
+        -->
+        <!--style="padding: 10px 0px 0px 0px;"-->
+        <div style="padding:69px 0px 0px 0px;">
+        <header>
+            <nav>
+                <ul>
+                    <li>  
+                        <a href="home.html"> Home Page</a>  
+                    </li>  
+                    <li>  
+                        <a href="Inventory.html"> Inventory </a>  
+                    </li>  
+                    <li>  
+                        <a href="ShoppingList.html"> Shoppinglist </a>  
+                    </li>  
+                    <li> 
+                        <a href="recipe.html"> Recipe </a>  
+                    </li>  
+                </ul>  
+            </nav>  
+        </header>
+        </div>
     </div>
+</div>
 </body>
 </html>

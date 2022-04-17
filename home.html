@@ -6,6 +6,35 @@
         width: 500px;
         height: 700px; 
     }
+    .alert{
+        border: solid rgb(130, 176,77);
+    }
+    header {  
+        background-color: rgb(130, 176,77);  
+        position:-webkit-sticky;
+        position: sticky;      
+        top: 0px;
+        height: 30px;  
+        display: flex;  
+        align-items: center;   
+    }
+    ul li{
+        list-style-type: none;
+        margin: 5px;
+        padding: 5px 10px 5px 10px;
+    }
+
+    li:hover {
+        background-color: rgb(85, 104, 63);
+    }
+    header * {  
+        display: inline;  
+    }  
+
+    .recommendation{
+        padding: 0px 0px 145px 0px;
+    }
+    
 </style>
 <head>
     <title>Home Page</title>
@@ -34,7 +63,7 @@
             </h5>
             <h5>
                 Some ingredients in inventory will expire soon!
-                <a href = "inventory.html">
+                <a href = "Inventory.html">
                     Click for details
                 </a>
             </h5>
@@ -45,48 +74,68 @@
             </h5>
             <h5>
                 Meal-> Pasta
-                <a href = "inventory.html">
+                <a href = "Inventory.html">
                     get recipe
                 </a>
             </h5>
             <h5>
                 Soup -> Tomato Soup
-                <a href = "inventory.html">
+                <a href = "Inventory.html">
                     get recipe
                 </a>
             </h5>
             <h5>
                 Dessert -> Browny
-                <a href = "inventory.html">
+                <a href = "Inventory.html">
                     get recipe
                 </a>
             </h5>
         </div>
 
-            <div class = "tab" align = "center">
+            <!--<div class = "tab" align = "center">
                 <div class="action-container">
                     <button class = "tablinks">
-                        <a href = "newHome.html">
+                        <a href = "home.html">
                             Home
                         </a>
                     </button>
                     <button class = "tablinks">
-                        <a href = "newRecipe.html">
+                        <a href = "recipe.html">
                             Recipes
                         </a>
                     </button>
                         <button class = "tablinks">
-                        <a href = "inventory.html">
+                        <a href = "Inventory.html">
                             Inventory
                         </a>
                     </button>
                     <button class = "tablinks">
-                        <a href = "shoppinglist.html">
+                        <a href = "ShoppingList.html">
                             Shop List
                         </a>
                     </button>
                 </div>
             </div>
+            -->
+            <header>
+                <nav>
+                    <ul>
+                        <li>  
+                            <a href="home.html"> Home Page</a>  
+                        </li>  
+                        <li>  
+                            <a href="Inventory.html"> Inventory </a>  
+                        </li>  
+                        <li>  
+                            <a href="ShoppingList.html"> Shoppinglist </a>  
+                        </li>  
+                        <li> 
+                            <a href="recipe.html"> Recipe </a>  
+                        </li>  
+                    </ul>  
+                </nav>  
+            </header>
+
         </div>
     </body>
 </div>

@@ -10,7 +10,7 @@
                 margin: 0px;
                 padding: 0px;
             }
-            
+
             body {  
                 height: 125vh;  
                 margin-top: 80px;  
@@ -27,7 +27,6 @@
                 height: 30px;  
                 display: flex;  
                 align-items: center;  
-                box-shadow: 0 0 25px 0 black;  
             }
 
             header * {  
@@ -86,32 +85,14 @@
             
 
             <div>
-                <a href="home.html"><img style="background-color:rgb(130, 176,77); " width="500" src="KK_logo_green_BG.png"> </a>
+                <a href="home.html"><img style="background-color:rgb(130, 176,77); " width="494" src="KK_logo_green_BG.png"> </a>
             </div>
-
-            <header>
-                <nav>
-                    <ul>
-                        <li>  
-                            <a href="home.html"> Home Page</a>  
-                        </li>  
-                        <li>  
-                            <a href="Inventory_Joey.html"> Inventory </a>  
-                        </li>  
-                        <li>  
-                            <a href="ShoppingList.html"> Shoppinglist </a>  
-                        </li>  
-                        <li> 
-                            <a href="recipe.html"> Recipe </a>  
-                        </li>  
-                    </ul>  
-                </nav>  
-            </header>
 
             <div>
                 <h1 style="margin: 10px"> What do I have to get? </h1>
                 <input type="text" id="myInput" placeholder="E.g. Apples">
-                <span onclick="addItem()" class="addItemBtn">Add Item</span>
+                <span onclick="addItem()" onclick="showKeyboard()" onblur="removeKeyboard()"class="addItemBtn">Add Item</span>
+                <img src="Keyboard.PNG" id="keyboard" style="display: none;"   width="495px">  
             </div>
 
             <ul id="myUL" style="padding: 25px; font-size:x-large;">
@@ -135,14 +116,40 @@
                     Celery
                     <span class="close">x</span>
                 </li>
+                <li id="printContent">
+
+                </li>
             </ul>
-            
+            <div style="padding: 247px 0px 0px 0px;">
+                <header>
+                    <nav>
+                        <ul>
+                        <li>  
+                            <a href="home.html"> Home Page</a>  
+                        </li>  
+                        <li>  
+                            <a href="Inventory.html"> Inventory </a>  
+                        </li>  
+                        <li>  
+                            <a href="ShoppingList.html"> Shoppinglist </a>  
+                        </li>  
+                        <li> 
+                            <a href="recipe.html"> Recipe </a>  
+                        </li>  
+                        </ul>  
+                    </nav>  
+                </header>
+            </div>
             
         </div>
+        
     
     </Body>   
 
     <script>
+        var item=localStorage.getItem("item");
+        document.getElementById("printContent").innerHTML = item;
+
         var myNodelist = document.getElementById("food");
         var i;
         for (i = 0; i < myNodelist.length; i++) {
@@ -152,8 +159,7 @@
             span.appendChild(txt);
             myNodelist[i].appendChild(span);
         }
-
-        // Click on a close button to hide the current list item
+ 
         var close = document.getElementsByClassName("close");
         var i;
         for (i = 0; i < close.length; i++) {
@@ -162,7 +168,16 @@
                 div.style.display = "none";
             }
         }
+        
+        function showKeyboard(){
+            var keyboard = document.getElementById("keyboard");
+            keyboard.style.display = "block";
+        }
 
+        function removeKeyboard(){
+            var keyboard = document.getElementById("keyboard");
+            keyboard.style.display = "none";
+        }
         function addItem() {
             var li = document.createElement("li");
             var inputValue = document.getElementById("myInput").value;
