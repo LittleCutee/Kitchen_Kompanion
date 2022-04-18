@@ -7,14 +7,11 @@
         <style type=text/css>   
             *{
                 box-sizing: border-box;
-                margin: 0px;
                 padding: 0px;
+                align-items: center;
             }
 
             body {  
-                height: 125vh;  
-                margin-top: 80px;  
-                padding: 30px;  
                 background-size: cover;  
                 font-family: sans-serif;  
             }  
@@ -23,16 +20,16 @@
                 background-color: rgb(130, 176,77);  
                 position:-webkit-sticky;
                 position: sticky;      
-                top: 0px;
+                bottom: 0px;
                 height: 30px;  
                 display: flex;  
-                align-items: center;  
-            }
+                align-items: center;   
+        }
 
             header * {  
                 display: inline;  
             }  
-
+            
             header li {  
                 padding: 16px;  
             }  
@@ -40,17 +37,22 @@
             header li a {  
                 color: #283618;  
             }  
-
+            /*
             #Appborder {
                 border: solid navy;
                 width: 500px;
                 height: 700px;
             }
-
+            */
             ul li{
                 list-style-type: none;
             }
             
+            .navbar{
+                list-style-type: none;
+                margin: 5px;
+                padding: 5px 5px 5px 10px;
+            }
             .addItemBtn {
                 padding: 10px;
                 background: gray;
@@ -89,7 +91,7 @@
             </div>
 
             <div>
-                <h1 style="margin: 10px"> What do I have to get? </h1>
+                <h1> What do I have to get? </h1>
                 <input type="text" id="myInput" placeholder="E.g. Apples" onclick=showKeyboard() onblur=removeKeyboard()>
                 <span onclick="addItem()" class="addItemBtn">Add Item</span>
                 <script>
@@ -102,10 +104,9 @@
                         temp.style.display = "none"
                     }
                 </script>
-                <img src="keyboard.jpeg" id="keyboard" style=display:none  width="497px">
             </div>
 
-            <ul id="myUL" style="padding: 25px; font-size:x-large;">
+            <ul id="myUL" style="font-size:x-large;">
                 <li id="food">
                     Broccoli 
                     <span class="close">x</span>
@@ -130,11 +131,11 @@
                 </li>
 
             </ul>
-
-            <div style="padding: 247px 0px 0px 0px;">
+            <img src="Keyboard.PNG" id="keyboard" style=display:none  width="497px">
+            <div style="padding: 230px 0px 0px 0px;">
                 <header>
                     <nav>
-                        <ul>
+                        <ul class="navbar">
                         <li>  
                             <a href="home.html"> Home Page</a>  
                         </li>  
@@ -158,9 +159,11 @@
     </Body>   
 
     <script>
-        var item=localStorage.getItem("item");
+        var item = localStorage.getItem("item");
         document.getElementById("printContent").innerHTML = item;
+        
 
+        
         var myNodelist = document.getElementById("food");
         var i;
         for (i = 0; i < myNodelist.length; i++) {

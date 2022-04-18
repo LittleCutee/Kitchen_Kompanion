@@ -6,9 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type=text/css>   
             body {  
-                height: 125vh;  
-                margin-top: 80px;  
-                padding: 30px;  
                 background-size: cover;  
                 font-family: sans-serif;  
             }  
@@ -16,7 +13,7 @@
                 background-color: rgb(130, 176,77);  
                 position:-webkit-sticky;
                 position: sticky;      
-                top: 0px;
+                bottom: 0px;
                 height: 30px;  
                 display: flex;  
                 align-items: center;   
@@ -33,13 +30,15 @@
             }
             header li a {  
                 color: #283618;  
-            }  
+            } 
+            /*
             #Appborder {
                 border: solid navy;
                 width: 500px;
                 height: 700px;
                 
             }
+            */
             table, th, td {
                 border: 1px solid black;
                 
@@ -67,7 +66,7 @@
             <input type="number" id="itemquantity" name="itemquantity" onclick=showKeyboard() onblur=removeKeyboard()>
             <br>
             <input type="reset" value="Finish" onclick="addNewItem()"> </button>
-            <img src="keyboard.jpeg" id="keyboard" style=display:none width="495px">
+            <img src="keyboard.PNG" id="keyboard" style=display:none width="495px">
             <div style="padding-top: 204px;">
             <header>
                 <nav>
@@ -183,9 +182,9 @@
 
         function test1(){
             for (var i=0; i<shoppingList.length; i++){
-                transferList += "<tr>"
-                transferList += ("<td>" + shoppingList[i] + "<br>" + "</td>");
-                transferList += "</tr>"
+                transferList += "<li>"
+                transferList += (shoppingList[i]);
+                transferList += "</li>"
             }
         }
         
