@@ -90,9 +90,19 @@
 
             <div>
                 <h1 style="margin: 10px"> What do I have to get? </h1>
-                <input type="text" id="myInput" placeholder="E.g. Apples">
-                <span onclick="addItem()" onclick="showKeyboard()" onblur="removeKeyboard()"class="addItemBtn">Add Item</span>
-                <img src="Keyboard.PNG" id="keyboard" style="display: none;"   width="495px">  
+                <input type="text" id="myInput" placeholder="E.g. Apples" onclick=showKeyboard() onblur=removeKeyboard()>
+                <span onclick="addItem()" class="addItemBtn">Add Item</span>
+                <script>
+                    function showKeyBoard(){
+                        var temp = document.getElementById("keyboard")
+                        temp.style.display = "block"
+                    }
+                    function removeKeyBoard(){
+                        var temp = document.getElementById("keyboard")
+                        temp.style.display = "none"
+                    }
+                </script>
+                <img src="keyboard.jpeg" id="keyboard" style=display:none  width="497px">
             </div>
 
             <ul id="myUL" style="padding: 25px; font-size:x-large;">
@@ -100,26 +110,27 @@
                     Broccoli 
                     <span class="close">x</span>
                 </li>
-                <li id="food">
+                <li id="food2">
                     Steak
                     <span class="close">x</span>
                 </li>
-                <li id="food">
+                <li id="food3">
                     Carrots
                     <span class="close">x</span>
                 </li>
-                <li id="food">
+                <li id="food4">
                     Garlic
                     <span class="close">x</span>
                 </li>
-                <li id="food">
+                <li id="food5">
                     Celery
                     <span class="close">x</span>
                 </li>
                 <li id="printContent">
-
                 </li>
+
             </ul>
+
             <div style="padding: 247px 0px 0px 0px;">
                 <header>
                     <nav>
